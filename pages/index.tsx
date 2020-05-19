@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import React from 'react';
+import { withApollo } from '../lib/apollo';
 
-export default function Home(): JSX.Element {
+const Home: React.FC = () => {
   return (
     <div className="container">
       <Head>
@@ -203,4 +205,6 @@ export default function Home(): JSX.Element {
       `}</style>
     </div>
   );
-}
+};
+
+export default withApollo({ ssr: true })(Home);
