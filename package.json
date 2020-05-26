@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "rm -rf ./node_modules/.cache/babel-loader && next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "rm -rf ./node_modules/.cache/babel-loader && next start",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "dependencies": {
