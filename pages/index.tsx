@@ -2,12 +2,18 @@ import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
 import { withApollo } from '../lib/apollo';
+import styled from 'styled-components';
 
+const Title = styled.h1`
+  font-size: 50px;
+  color: red;
+`;
 const Home: React.FC = () => {
   return (
     <div className="container">
+      <Title>Create Next App</Title>
       <Head>
-        <title>Create Next App</title>
+        <title>CrA</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
