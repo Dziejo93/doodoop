@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "rm -rf ./node_modules/.cache/babel-loader && next dev",
+    "dev": "rm -rf ./node_modules/.cache/babel-loader && next dev -p 8181",
     "build": "next build",
     "start": "rm -rf ./node_modules/.cache/babel-loader && next start",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
@@ -17,7 +17,7 @@
     "cross-fetch": "^3.0.4",
     "graphql": "^14.0.2",
     "graphql-tag": "2.10.3",
-    "next": "9.3.5",
+    "next": "^9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "styled-components": "^5.1.1"
