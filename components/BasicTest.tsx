@@ -17,7 +17,9 @@ const BasicTest: React.FC = () => {
   return (
     <>
       {edges.map((edge: any) => (
-        <div key={edge.node.id}>{edge.node.email}</div>
+        <div className="bg-red-100" key={edge.node.id}>
+          {edge.node.email}
+        </div>
       ))}
     </>
   );
