@@ -14,13 +14,17 @@
     "apollo-cache-inmemory": "1.6.5",
     "apollo-client": "2.6.8",
     "apollo-link-http": "1.5.16",
+    "autoprefixer": "^9.8.0",
     "cross-fetch": "^3.0.4",
     "graphql": "^14.0.2",
     "graphql-tag": "2.10.3",
     "next": "^9.4.4",
+    "postcss-import": "^12.0.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "styled-components": "^5.1.1"
+    "sass": "^1.26.8",
+    "styled-components": "^5.1.1",
+    "tailwindcss": "^1.4.6"
   },
   "browserslist": {
     "production": [
