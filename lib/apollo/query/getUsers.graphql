@@ -1,0 +1,12 @@
+query allPosts {
+  users {
+    all {
+      edges {
+        node {
+          email
+          id
+        }
+      }
+    }
+  }
+}
