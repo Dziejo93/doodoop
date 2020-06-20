@@ -8,9 +8,22 @@
     "start": "rm -rf ./node_modules/.cache/babel-loader && next start",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "dependencies": {
     "@apollo/react-hooks": "3.1.3",
     "@apollo/react-ssr": "3.1.3",
+    "@material-ui/core": "^4.10.2",
     "apollo-cache-inmemory": "1.6.5",
     "apollo-client": "2.6.8",
     "apollo-link-http": "1.5.16",
@@ -23,20 +36,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "sass": "^1.26.8",
-    "styled-components": "^5.1.1",
-    "tailwindcss": "^1.4.6"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@types/node": "^14.0.1",
