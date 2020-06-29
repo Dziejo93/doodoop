@@ -1,12 +1,15 @@
+import { createMuiTheme } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider as MaterialThemeProvider } from '@material-ui/styles';
 import { AppProps } from 'next/app';
-import React, { FC, useEffect } from 'react';
+import Head from 'next/head';
+import { FC, useEffect } from 'react';
+import { ThemeProvider as StyleComponentsThemeProvider } from 'styled-components';
 
-import CustomHead from '@/components/Head';
-import theme from '@/styles/theme';
+import styledComponentsTheme from '@/styles/theme';
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
+  const materialTheme = createMuiTheme();
   useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
@@ -17,12 +20,16 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <>
-      <CustomHead />
-      <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <Head>
+        <title>Doodoop</title>
+      </Head>
+      <StyleComponentsThemeProvider theme={styledComponentsTheme}>
+        <MaterialThemeProvider theme={materialTheme}>
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <CssBaseline />
+          <Component {...pageProps} />
+        </MaterialThemeProvider>
+      </StyleComponentsThemeProvider>
     </>
   );
 };

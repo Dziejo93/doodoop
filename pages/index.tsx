@@ -1,16 +1,14 @@
-import React from 'react';
-import { withApollo } from '@/lib/apollo';
-import CustomHead from '@/components/Head';
-import BasicTest from '@/components/BasicTest';
+import { NextPage } from 'next';
 
-const Home: React.FC = () => {
+import BasicTest from '@/components/BasicTest';
+import Layout from '@/layouts';
+import { withApollo } from '@/lib/apollo';
+
+const Home: NextPage = () => {
   return (
-    <div className="container">
-      <CustomHead />
-      <main>
-        <BasicTest />
-      </main>
-    </div>
+    <Layout>
+      <BasicTest />
+    </Layout>
   );
 };
 
