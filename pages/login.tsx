@@ -2,6 +2,7 @@ import { NextPage } from 'next';
 
 import CustomLogin from '@/components/login';
 import { LoginLayout } from '@/layouts';
+import { withApollo } from '@/lib/apollo';
 
 const Login: NextPage = () => {
   return (
@@ -11,4 +12,4 @@ const Login: NextPage = () => {
   );
 };
 
-export default Login;
+export default withApollo()(Login);

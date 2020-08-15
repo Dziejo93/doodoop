@@ -1,4 +1,13 @@
-import { Box, Button, Checkbox, FormControlLabel, Grid, IconButton, InputAdornment } from '@material-ui/core';
+import {
+  Box,
+  Button,
+  Checkbox,
+  CircularProgress,
+  FormControlLabel,
+  Grid,
+  IconButton,
+  InputAdornment,
+} from '@material-ui/core';
 import { Visibility, VisibilityOff } from '@material-ui/icons';
 import { Dispatch, FC, FormEvent, MouseEvent, SetStateAction } from 'react';
 import { useForm } from 'react-hook-form';
@@ -73,6 +82,17 @@ const StyledCheckbox = styled(FormControlLabel)`
     color: ${getColor('carolinaBlue')};
   }
 `;
+const NameWithLoader = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+const CustomLoader = styled(CircularProgress)`
+  &&.MuiCircularProgress-root {
+    color: ${getColor('black')};
+    display: flex;
+  }
+`;
 
 const handleMouseDownPassword = (event: MouseEvent<HTMLButtonElement>) => {
   event.preventDefault();
@@ -134,7 +154,10 @@ const LoginForm: FC<Props> = ({ isPasswordHidden, setIsPasswordHidden, register,
           label="Remember me"
         />
         <StyledButton type="submit" variant="outlined" color="primary">
-          Log In
+          <NameWithLoader>
+            Log In
+            <CustomLoader size={20} />
+          </NameWithLoader>
         </StyledButton>
       </ButtonWrapper>
     </StyledForm>

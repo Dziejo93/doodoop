@@ -1,8 +1,10 @@
+import { useMutation } from '@apollo/react-hooks';
 import { BaseSyntheticEvent, FC, useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 import styled from 'styled-components';
 
 import LoginForm from '@/components/forms/login';
+import loginMutation from '@/lib/apollo/mutations/loginMutation.graphql';
 
 type Inputs = {
   password: string;
@@ -11,7 +13,7 @@ type Inputs = {
 };
 type OnSubmit<Data extends FieldValues> = (
   data: Data,
-  e?: BaseSyntheticEvent<object, any, any> | undefined,
+  e?: BaseSyntheticEvent<object, undefined, undefined> | undefined,
 ) => void | Promise<void>;
 
 const PaperWrapper = styled.div`
@@ -27,11 +29,19 @@ const DoodoopLogo = styled.img`
 `;
 
 const LoginComponent: FC = () => {
+  const [userMutation] = useMutation(loginMutation);
   const [isPasswordHidden, setIsPasswordHidden] = useState(true);
   const { register, errors, handleSubmit } = useForm<Inputs>({});
 
-  const onSubmit: OnSubmit<Inputs> = (data) => {
-    console.log(data, errors, 1); //@todo implement when backend is rdy
+  const onSubmit: OnSubmit<Inputs> = async (data, event) => {
+    event?.preventDefault();
+    const { email, password } = data;
+    console.log(email, password);
+
+    const response = await userMutation({
+      variables: { email, password },
+    });
+    console.log(response); //@todo implement when backend is rdy
   };
 
   return (

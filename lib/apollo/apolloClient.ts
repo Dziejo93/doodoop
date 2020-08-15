@@ -1,8 +1,9 @@
-import { ApolloClient } from 'apollo-client';
 import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory';
+import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
-import { NextPageContext } from 'next';
 import fetch from 'cross-fetch';
+import { NextPageContext } from 'next';
+
 import config from '@/config';
 
 export default function createApolloClient(initialState: NormalizedCacheObject, ctx?: NextPageContext) {
