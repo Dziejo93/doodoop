@@ -2,5 +2,5 @@
  * https://nextjs.org/docs/basic-features/environment-variables#loading-environment-variables
  * */
 export default {
-  graphqlApi: process.env.GRAPHQL_API,
+  graphqlApi: process.env.NEXT_PUBLIC_GRAPHQL_API,
 };
